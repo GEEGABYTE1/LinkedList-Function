@@ -40,4 +40,40 @@ def insert_node_after_value(self, new_value, value):                           #
                 
             else:
                 current_node = next_node
+  
+
+ def insert_before_value(self, new_value, value):                               #Adds a new node before a certain node                
+    current_node = self.get_head_node() 
+    new_node = Node(new_value)
+
+
+    while current_node:
+        next_node = current_node.get_link()
+        if next_node == value:
+            new_node.set_link(self.head_node)
+            self.head_node = new_node 
+            print(self.head_node.get_value())
+            #next_node = next_node.get_link()
+        elif current_node.get_value() == value:
+            new_node.set_link(current_node)
+            print(new_node.get_value())
+            print(current_node.get_value())
+            current_node = next_node
+
+        else:
+            print(current_node.get_value())
+            current_node = next_node
+                
+        
+            
+            
+                
+
+ll = LinkedList('a')
+ll.insert_node('b')
+ll.insert_node('c')
+ll.insert_node('d')
+ll.insert_before_value('e', 'b')
+#print(ll.remove_nodes('b'))
+#print(ll.stringify_list())
 
