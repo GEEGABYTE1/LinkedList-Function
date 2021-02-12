@@ -63,6 +63,25 @@ def insert_node_after_value(self, new_value, value):                           #
         else:
             print(current_node.get_value())
             current_node = next_node
+   
+def remove_node_at_certain_index(self, index):                                  #Removes a node at certain index. Nodes start from 1.
+        count = 1
+        current_node = self.get_head_node()
+
+        if index == 1:
+            self.head_node = current_node.get_link()
+        else:
+            while current_node:
+                count += 1
+                next_node = current_node.get_link()
+
+                if count == index:
+                    current_node.set_link(next_node.get_link())
+                    current_node = None
+                else:
+                    
+                    current_node = next_node
+                    
                 
         
             
