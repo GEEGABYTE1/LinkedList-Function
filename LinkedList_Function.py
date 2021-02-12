@@ -81,6 +81,26 @@ def remove_node_at_certain_index(self, index):                                  
                 else:
                     
                     current_node = next_node
+                  
+def insert_node_at_certain_index(self, index, new_value):                      #Adds a node at certain index. Nodes start from 1.
+        count = 1
+        current_node = self.get_head_node()
+        new_node = Node(new_value)
+
+        if index == 1:
+            new_node.set_link(self.head_node)
+            self.head_node = new_node
+        else:
+            while current_node:
+                count += 1
+                next_node = current_node.get_link()
+
+                if count == index:
+                    current_node.set_link(new_node)
+                    new_node.set_link(next_node)
+                    break
+                else:
+                    current_node = next_node
                     
                 
         
