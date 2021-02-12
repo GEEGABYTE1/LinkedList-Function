@@ -1,3 +1,3 @@
-Linked List function that removes all nodes with the specified value. 
+Extra LinkedList Functions.
 
 Made in Python 
