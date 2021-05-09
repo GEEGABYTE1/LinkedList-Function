@@ -102,6 +102,25 @@ def insert_node_at_certain_index(self, index, new_value):                      #
             break
         else:
             current_node = next_node
+     
+ def linear_search(self, linked_list, target_value):            #Takes a linkedlist as a parameter 
+  matches = [] 
+  counter = 1 
+  current_node = linked_list.get_head_node()
+
+  current_node = linked_list.get_head_node()
+  while current_node:
+    if current_node.get_value() != None:
+      if current_node.get_value() == target_value:
+        matches.append(counter)
+    counter += 1
+    current_node = current_node.get_link()
+  
+  if matches:
+    return matches 
+  else:
+    raise ValueError("{} value is not in the list! ".format(target_value))
+
 
                 
         
