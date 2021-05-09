@@ -122,6 +122,24 @@ def insert_node_at_certain_index(self, index, new_value):                      #
     raise ValueError("{} value is not in the list! ".format(target_value))
 
 
+# RECURSION VERSION OF .linear_search()
+
+def linear_search(linked_list, target_value, matches=[], counter=1):
+  current_node = linked_list.get_head_node()
+  
+  if current_node == None:
+    return matches
+  else:
+    if current_node.get_value() == target_value:
+      matches.append(counter)
+  
+    counter += 1
+    current_node = current_node.get_link()
+    linked_list.head_node = current_node
+  
+  return linear_search(linked_list, target_value, matches, counter)
+
+
                 
         
             
